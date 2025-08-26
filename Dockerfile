@@ -1,11 +1,11 @@
-# Imagen base
-From python:3.9-slim
+# Imagen base de Python 3.9
+FROM python:3.9-slim
 
-# Crear directorio de trabajo 
+# Directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copiar archivo principal
+# Copiar archivo de la app al contenedor
 COPY app.py .
 
-# Ejecutar aplicaciones
-CMD ["python",  "app.py"]
+# Comando para ejecutar la aplicación
+CMD ["python", "app.py"]
