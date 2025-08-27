@@ -4,7 +4,11 @@ FROM python:3.9-slim
 # Directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Copiar archivo de la app al contenedor
+# Copiar archivos 
+COPY requirements.txt .
+
+# Instalar dependencias
+RUN pip install --no-cache-dir -r requirements.txt
 COPY app.py .
 
 # Comando para ejecutar la aplicación
