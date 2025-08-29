@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: flask-app
 spec:
-  replicas: 2   # Número de Pods que quieres correr
+  replicas: 2   
   selector:
     matchLabels:
       app: flask-app
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: flask-container
-        image: yaeth/devops-practica/flask-app:latest   # Cambia esto por tu imagen subida
+        image: yaethkbs/aplicacion-flask:latest  
         ports:
         - containerPort: 5000
 
