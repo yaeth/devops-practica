@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: flask-app-service
+  name: flask-service
 spec:
   selector:
     app: flask-app
   ports:
     - protocol: TCP
-      port: 80       # Puerto dentro del cluster
-      targetPort: 5000  # Puerto del contenedor Flask
-  type: NodePort   # También puedes usar LoadBalancer si estás en la nube
-
+      port: 5000
+      targetPort: 5000
+      nodePort: 30001
+  type: NodePort
