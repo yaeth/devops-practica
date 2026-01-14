@@ -1,0 +1,18 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: Docker@2
+  inputs:
+    command: buildAndPush
+    repository: demo
+    dockerfile: app/Dockerfile
+    containerRegistry: ACR-CONNECTION
+    tags: latest
+
+- script: |
+    kubectl apply -f k8s/
+  displayName: Deploy to AKS
